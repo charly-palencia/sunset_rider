@@ -1,3 +1,5 @@
+require "delegate"
+
 module Biz
   class Score < SimpleDelegator
 
@@ -7,6 +9,10 @@ module Biz
 
     def class
       data.class
+    end
+
+    def errors
+      data.errors.messages
     end
   end
 end

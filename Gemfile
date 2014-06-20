@@ -13,8 +13,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'sass-rails', '~> 4.0.3'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
+gem 'shoulda', '~> 3.5.0', group: :test
 gem 'turbolinks'
 gem 'rspec-rails'
 gem 'rspec-given', '~> 3.5.4'
 gem 'zurb-foundation', '~> 4.0.0'
-

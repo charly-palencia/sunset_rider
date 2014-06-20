@@ -3,11 +3,11 @@ class Runner
     @context, @repo = context, repo
   end
 
-  def create_score(params)
+  def save_score(params)
     score = @repo.create_score(params)
-    result = false
+    result = :failure
     if @repo.save_score(score)
-      result = true
+      result = :success
     end
     yield result, score
   end
