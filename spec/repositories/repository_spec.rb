@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Repository , type: :integration do
+describe Repository , integration: true do
   Given(:repository){ described_class.new }
 
   describe "#create_score" do
@@ -27,5 +27,14 @@ describe Repository , type: :integration do
       And{ expect(score.id).to be_nil }
       And{ expect(result).to be false }
     end
+  end
+
+  describe "#all_bosess" do
+    before{ create_list(:boss, 5) }
+    Given(:bosses){ repository.all_bosses }
+    Then {
+
+binding.pry
+expect(bosses.first).to be_a_kind_of(Biz::Boss) }
   end
 end

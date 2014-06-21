@@ -1,6 +1,7 @@
 class ScoresController < ApplicationController
   expose(:runner){ Runner.new(self, Repository.new) }
   expose(:score){ runner.new_score }
+  expose(:bosses){ runner.new_bosses }
 
   def index
   end

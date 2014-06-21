@@ -1,6 +1,6 @@
 require "delegate"
 
 module Biz
-  class Score < Model
+  class Boss < Model
   end
 end
