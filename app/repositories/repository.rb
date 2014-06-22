@@ -9,6 +9,6 @@ class Repository
   end
 
   def all_bosses
-   Biz::Score.wraps(Boss.all)
+   Biz::Boss.wraps(Boss.all)
   end
 end

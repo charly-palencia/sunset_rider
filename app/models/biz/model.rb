@@ -3,6 +3,7 @@ require "delegate"
 
 module Biz
   class Model < SimpleDelegator
+    # TODO: ban active record save/update methods
 
     def data
       __getobj__

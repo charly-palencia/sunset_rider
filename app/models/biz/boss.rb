@@ -1,4 +1,4 @@
-require "delegate"
+require "./app/models/biz/model"
 
 module Biz
   class Boss < Model

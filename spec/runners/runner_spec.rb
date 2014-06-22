@@ -1,5 +1,6 @@
 require "spec_helper"
 require "app/models/biz/score"
+require "app/models/biz/boss"
 require "app/runners/runner"
 
 describe Runner do
@@ -38,5 +39,13 @@ describe Runner do
 
     When(:result){ runner.new_score({}) }
     Then{ expect(result).to be_kind_of(Biz::Score) }
+  end
+
+  describe "#all_bosses" do
+    Given(:repo){ double(all_bosses: [Biz::Boss.new({})]) }
+
+    When(:result){ runner.all_bosses }
+    Then{ expect(result).to be_kind_of(Array) }
+    Then{ expect(result.first).to be_kind_of(Biz::Boss) }
   end
 end

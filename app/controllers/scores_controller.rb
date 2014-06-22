@@ -1,10 +1,7 @@
 class ScoresController < ApplicationController
   expose(:runner){ Runner.new(self, Repository.new) }
   expose(:score){ runner.new_score }
-  expose(:bosses){ runner.new_bosses }
-
-  def index
-  end
+  expose(:bosses){ runner.all_bosses }
 
   def create
     runner.save_score(score_params) do |response, score|
@@ -20,6 +17,6 @@ class ScoresController < ApplicationController
 
   private
   def score_params
-    params.require(:score).permit(:name, :enemies_killed)
+    params.require(:score).permit(:name, :enemies_killed, boss_ids: [])
   end
 end

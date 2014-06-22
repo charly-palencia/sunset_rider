@@ -15,4 +15,8 @@ class Runner
   def new_score(params={})
    @repo.create_score(params)
   end
+
+  def all_bosses
+    @repo.all_bosses
+  end
 end

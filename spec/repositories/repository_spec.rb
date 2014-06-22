@@ -6,7 +6,6 @@ describe Repository , integration: true do
   describe "#create_score" do
     When(:result){ repository.create_score }
     Then { expect(result).to be_a_kind_of(Biz::Score) }
-    And { expect(result.data).to be_a_kind_of(Score) }
   end
 
   describe "#save_score" do
@@ -32,9 +31,7 @@ describe Repository , integration: true do
   describe "#all_bosess" do
     before{ create_list(:boss, 5) }
     Given(:bosses){ repository.all_bosses }
-    Then {
-
-binding.pry
-expect(bosses.first).to be_a_kind_of(Biz::Boss) }
+    Given(:first_boss){ bosses.first }
+    Then { expect(first_boss).to be_a_kind_of(Biz::Boss) }
   end
 end

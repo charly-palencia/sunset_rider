@@ -1,4 +1,4 @@
-.large-9.columns
+.large-12.columns
   = form_for(score) do |form|
     .large-6
       = form.label(:name)
@@ -6,4 +6,12 @@
     .large-2
       = form.label(:enemies_killed)
       = form.number_field(:enemies_killed)
+    .row
+      %label Bosses:
+      %ul.inline-list
+        - bosses.each do |boss|
+          %li
+            %a{href:"javascript:void(0)"}
+              = image_tag boss.image_url
+            = check_box_tag "score[boss_ids][]", boss.id, score.bosses.include?(boss)
     = form.submit
