@@ -53,7 +53,6 @@ Run all the suite test
 Design 
 ---
 ***
-Image:
 
-![](/public/design.jpg)
+![](public/design.png)
 
