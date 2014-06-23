@@ -9,13 +9,13 @@ Install
 --
 
 ###Prerequisites###
-***
+*****
 
 Postgresql:
 
     brew install postgresql
 
-###install Project###
+###Install Project###
 ***
     git clone git@github.com:charly-palencia/sunset_rider.git
     cd sunset_rider
@@ -34,7 +34,6 @@ We are using **Rails 4.x**. The server could be started with:
 
 Test
 ---
-***
 
 Sunset rider managment use **rspec 3.0** and we create three task to run each kind of test:
 
@@ -52,7 +51,6 @@ Run all the suite test
 
 Design 
 ---
-***
 
 ![](public/design.png)
 
