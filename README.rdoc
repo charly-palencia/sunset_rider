@@ -1,28 +1,58 @@
-== README
+Sunset Rider
+=====
+![](http://www.aspeb.com.ar/main/images/stories/Afro/Sunset/Sunset_Riders_01.jpg)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sunset rider score managment. Easy way to test my hexagonal architecture ideas based in **Jim Weirich (RIP)**, **Uncle Bob** and others authors.
 
-Things you may want to cover:
+Install
+--
 
-* Ruby version
+###Prerequisites###
+***
 
-* System dependencies
+Postgresql:
 
-* Configuration
+    brew install postgresql
 
-* Database creation
+###install Project###
+***
+    git clone git@github.com:charly-palencia/sunset_rider.git
+    cd sunset_rider
+    bundle install
+    
+Config database
+    
+    rake db:create
+    rake db:setup
 
-* Database initialization
+Rails server
 
-* How to run the test suite
+We are using **Rails 4.x**. The server could be started with:
+    
+    rails s
 
-* Services (job queues, cache servers, search engines, etc.)
+Test
+---
+***
 
-* Deployment instructions
+Sunset rider managment use **rspec 3.0** and we create three task to run each kind of test:
 
-* ...
+Unit Test
 
+    rake utest
+    
+Integration Test
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+    rake itest
+    
+Run all the suite test
+
+    rake test
+
+Design 
+---
+***
+Image:
+
+![](/public/design.jpg)
+
