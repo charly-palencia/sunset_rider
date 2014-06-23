@@ -1,14 +1,11 @@
+require "./app/repositories/score_methods.rb"
 class Repository
-
-  def create_score(params={})
-    Biz::Score.wrap(Score.new(params))
-  end
-
-  def save_score(score)
-    score.data.save
-  end
-
+  include Repositories::ScoreMethods
   def all_bosses
    Biz::Boss.wraps(Boss.all)
+  end
+
+  def count_bosses
+    Boss.count
   end
 end

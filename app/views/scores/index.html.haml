@@ -1,0 +1,17 @@
+%table
+  %thead
+    - ["User", "Enemies killed", "Total Score", "Total %"].each do |attribute|
+      %th
+        = attribute
+  %tbody
+    - scores.each do |score|
+      %tr
+        -[:name, :enemies_killed].each do |attribute|
+          %td
+            = score.send attribute
+        %td
+          = score.calculator.total
+        %td
+          = score.calculator.total_percent(bosses_total)
+
+

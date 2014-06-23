@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20140621171201) do
 
   create_table "scores", force: true do |t|
     t.string   "name"
-    t.string   "enemies_killed"
+    t.integer  "enemies_killed"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

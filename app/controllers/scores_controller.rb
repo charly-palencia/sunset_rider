@@ -1,7 +1,10 @@
 class ScoresController < ApplicationController
-  expose(:runner){ Runner.new(self, Repository.new) }
+  expose(:repo){ Repository.new }
+  expose(:runner){ Runner.new(self, repo) }
   expose(:score){ runner.new_score }
+  expose(:scores){ runner.all_scores }
   expose(:bosses){ runner.all_bosses }
+  expose(:bosses_total){ repo.count_bosses }
 
   def create
     runner.save_score(score_params) do |response, score|

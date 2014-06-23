@@ -11,6 +11,16 @@ describe ScoresController do
     And { expect(controller.bosses.first).to be_a_kind_of(Biz::Boss) }
   end
 
+  describe "GET index" do
+    before{ create(:score) }
+    before{ create(:boss) }
+    When{ get :index }
+    Then{ expect(response.code).to be_eql("200") }
+    And { expect(subject).to render_template("scores/index") }
+    And { expect(controller.scores).to be_a_kind_of(Array) }
+    And { expect(controller.bosses_total).to be_a_kind_of(Integer) }
+  end
+
   describe "POST create" do
 
     context "when receive valid data" do
