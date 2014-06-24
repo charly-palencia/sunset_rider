@@ -14,3 +14,6 @@
  *= require_self
  *= require bootstrap.min
  */
+.thumbnail.active{
+  background-color: #1FE26D;
+}

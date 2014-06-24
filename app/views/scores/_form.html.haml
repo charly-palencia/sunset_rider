@@ -1,18 +1,20 @@
 .col-lg-12
   .well.bs-component
-    = form_for(score, class:"form-horizontal") do |form|
-      .large-6
-        = form.label(:name)
-        = form.text_field(:name)
-      .large-2
-        = form.label(:enemies_killed)
-        = form.number_field(:enemies_killed)
-      .row
-        %label Bosses:
-        %ul.inline-list
+    = form_for(score, html: {class:"form-horizontal"} ) do |form|
+      .form-group
+        = form.label(:name, class:"col-lg-2 control-label")
+        .col-lg-10
+          = form.text_field(:name)
+      .form-group
+        = form.label(:enemies_killed, class:"col-lg-2 control-label")
+        .col-lg-10
+          = form.number_field(:enemies_killed)
+      .form-group
+        %label.col-lg-2.control-label Bosses:
+        .col-lg-10
           - bosses.each do |boss|
-            %li
-              %a{href:"javascript:void(0)"}
+            .col-xs-6.col-md-3
+              %label.thumbnail{for:"check_box_#{boss.id}"}
+                = check_box_tag "score[boss_ids][]", boss.id, score.bosses.include?(boss), {id: "check_box_#{boss.id}", class:"sr-only js-bosses"}
                 = image_tag boss.image_url
-              = check_box_tag "score[boss_ids][]", boss.id, score.bosses.include?(boss)
-      = form.submit
+      = form.submit "Create", class: "btn btn-primary"
