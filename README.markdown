@@ -3,7 +3,9 @@ Sunset Rider
 
 ![](http://www.aspeb.com.ar/main/images/stories/Afro/Sunset/Sunset_Riders_01.jpg)
 
-Sunset rider score managment. Easy way to test my hexagonal architecture ideas based in **Jim Weirich (RIP)**, **Uncle Bob** and others authors.
+Sunset rider score managment. Easy way to test my hexagonal architecture into rails ideas based in **Jim Weirich (RIP)**, **Uncle Bob** and others authors.
+
+FAQ [here](http://www.gamefaqs.com/snes/588706-sunset-riders/faqs/42124)
 
 Install
 --
