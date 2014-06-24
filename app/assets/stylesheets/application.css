@@ -12,6 +12,5 @@
  *
  *= require_tree .
  *= require_self
- *= require foundation
+ *= require bootstrap.min
  */
- *= require foundation_and_overrides

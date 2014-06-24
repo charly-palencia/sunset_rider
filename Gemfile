@@ -20,4 +20,4 @@ gem 'shoulda', '~> 3.5.0', group: :test
 gem 'turbolinks'
 gem 'rspec-rails'
 gem 'rspec-given', '~> 3.5.4'
-gem 'zurb-foundation', '~> 4.0.0'
+gem 'twitter-bootstrap-rails', '~> 2.2.8'
