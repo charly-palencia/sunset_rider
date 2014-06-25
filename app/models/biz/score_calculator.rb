@@ -1,5 +1,7 @@
 module Biz
   class ScoreCalculator
+    ENEMY_KILLED_POINTS = 100
+
     def initialize(score)
       @score = score
     end
@@ -15,7 +17,11 @@ module Biz
     private
 
     def calculate_total
-      (@score.enemies_killed + bosses_total_score)
+      (calculate_enemies_killed_score + bosses_total_score)
+    end
+
+    def calculate_enemies_killed_score
+      @score.enemies_killed * ENEMY_KILLED_POINTS
     end
 
     def bosses_total_score
