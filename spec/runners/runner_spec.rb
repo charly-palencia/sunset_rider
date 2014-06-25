@@ -49,6 +49,14 @@ describe Runner, unit: true do
       Then{ expect(result).to be_kind_of(Array) }
       And{ expect(result.first).to be_kind_of(Biz::Score) }
     end
+
+    describe "#all_scores_sort_by_total" do
+      Given(:scores){ [45,23].map {|total| double(total: total) } }
+      Given(:repo){ double(all_scores: scores) }
+
+      When(:results){ runner.all_scores_sort_by_total }
+      Then { expect(results.first.total).to eql 45 }
+    end
   end
 
   describe "Boss" do

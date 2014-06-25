@@ -12,6 +12,10 @@ module ScoreMethods
    @repo.create_score(params)
   end
 
+  def all_scores_sort_by_total
+    @repo.all_scores.sort! {|score| -(score.total) }
+  end
+
   def all_scores
     @repo.all_scores
   end

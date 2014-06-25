@@ -2,7 +2,7 @@ class ScoresController < ApplicationController
   expose(:repo){ Repository.new }
   expose(:runner){ Runner.new(self, repo) }
   expose(:score){ runner.new_score }
-  expose(:scores){ ScoreDecorator.decorate_collection(runner.all_scores) }
+  expose(:scores){ ScoreDecorator.decorate_collection(runner.all_scores_sort_by_total.reverse) }
   expose(:bosses){ runner.all_bosses }
   expose(:bosses_total){ repo.count_bosses }
 
