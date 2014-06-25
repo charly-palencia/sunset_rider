@@ -4,7 +4,7 @@ require "./app/models/biz/score_calculator"
 describe Biz::ScoreCalculator do
   Given(:bosses){ [double({points: 300})] }
   Given(:bosses_total) { bosses.inject(0){ |sum, n| sum + n.points } }
-  Given(:enemies_killed_total) { score.enemies_killed }
+  Given(:enemies_killed_total) { score.enemies_killed  * described_class::ENEMY_KILLED_POINTS }
   Given(:score){ double({name: "Jhon Doe", enemies_killed: 50, bosses: bosses}) }
   When(:score_calculator){ described_class.new(score) }
 
