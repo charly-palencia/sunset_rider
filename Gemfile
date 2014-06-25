@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'compass-rails'
 gem 'decent_exposure', '~> 2.3.2'
+gem 'draper'
 gem 'factory_girl_rails', group: :test
 gem 'faker', group: :test
 gem 'haml-rails', '~> 0.5.3'

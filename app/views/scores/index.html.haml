@@ -1,6 +1,11 @@
-%table
+.row
+  .col-lg-12
+    .page-header
+      %h1
+        Scores
+%table.table.table-striped.table-hover
   %thead
-    - ["User", "Enemies killed", "Total Score", "Total %"].each do |attribute|
+    - ["User", "Enemies killed", "Bosses", "Total Score", "Total %"].each do |attribute|
       %th
         = attribute
   %tbody
@@ -10,8 +15,12 @@
           %td
             = score.send attribute
         %td
-          = score.calculator.total
+          - score.bosses.each do |boss|
+            = image_tag boss.image_url, size: "80x100"
         %td
-          = score.calculator.total_percent(bosses_total)
+          = score.total
+        %td
+          = score.total_percent(bosses_total)
+=link_to "New Score", new_score_path, class: "btn btn-primary"
 
 

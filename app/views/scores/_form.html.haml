@@ -18,3 +18,4 @@
                 = check_box_tag "score[boss_ids][]", boss.id, score.bosses.include?(boss), {id: "check_box_#{boss.id}", class:"sr-only js-bosses"}
                 = image_tag boss.image_url
       = form.submit "Create", class: "btn btn-primary"
+      = link_to "Cancel", scores_path, class: "btn btn-default"
