@@ -46,7 +46,9 @@ describe Repository , integration: true do
     end
 
     describe "#count_bosses" do
-      before{ create_list(:boss, 2) }
+      before{
+        create_list(:boss, 2)
+      }
       When(:result){ repository.count_bosses }
       Then { expect(result).to be_eql 2 }
     end

@@ -1,5 +1,5 @@
 require "./app/models/biz/model"
-require "./app/models/biz/score_calculator"
+require_dependency "./app/models/biz/score_calculator"
 
 module Biz
   class Score < Model

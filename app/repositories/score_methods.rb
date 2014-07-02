@@ -1,7 +1,7 @@
 module Repositories
   module ScoreMethods
     def create_score(params={})
-      Biz::Score.wrap(Score.new(params))
+      Biz::Score.wrap(Score.create(params))
     end
 
     def save_score(score)

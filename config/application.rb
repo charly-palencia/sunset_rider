@@ -13,6 +13,18 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+module Rails
+  module DataMapper
+    def self.preload_models(app)
+      app.config.paths['app/models'].each do |path|
+        Dir.glob("#{path}/**/*.rb").sort.each { |file|
+          require_dependency file[0..file.length] }
+      end
+      finalize
+    end
+  end
+end
+
 module PizzaDeliveryBoy
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.

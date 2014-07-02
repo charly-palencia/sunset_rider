@@ -1,4 +1,4 @@
-require "./app/repositories/score_methods.rb"
+require_dependency  "./app/repositories/score_methods.rb"
 class Repository
   include Repositories::ScoreMethods
   def all_bosses

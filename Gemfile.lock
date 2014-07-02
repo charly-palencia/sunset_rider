@@ -1,3 +1,90 @@
+GIT
+  remote: https://github.com/datamapper/dm-active_model.git
+  revision: c3b6ee07d40b8e2b4dbd60166a707da45beaefb4
+  branch: release-1.2
+  specs:
+    dm-active_model (1.2.1)
+      activemodel (>= 3.0, < 5.0)
+      dm-active_model
+      dm-core (~> 1.2, >= 1.2.0)
+
+GIT
+  remote: https://github.com/datamapper/dm-constraints.git
+  revision: 754f0b45d4eaafd5a9f7a2014d88a2b5c97e4dcb
+  branch: release-1.2
+  specs:
+    dm-constraints (1.2.0)
+      dm-core (~> 1.2.0)
+
+GIT
+  remote: https://github.com/datamapper/dm-core.git
+  revision: b8bec55f4b8c6b5e8a6d98e42481815fc1a6d0e4
+  branch: release-1.2
+  specs:
+    dm-core (1.2.1)
+      addressable (~> 2.3, >= 2.3.5)
+
+GIT
+  remote: https://github.com/datamapper/dm-do-adapter.git
+  revision: 1309550a6bdf62b6a02e246bca3ed729db2142c0
+  branch: release-1.2
+  specs:
+    dm-do-adapter (1.2.1)
+      data_objects (~> 0.10.6)
+      dm-core (~> 1.2.0)
+
+GIT
+  remote: https://github.com/datamapper/dm-migrations.git
+  revision: 28bb3b0c3005773ad09e9ee82cf8d45f93a9ec48
+  branch: release-1.2
+  specs:
+    dm-migrations (1.2.0)
+      dm-core (~> 1.2.0)
+
+GIT
+  remote: https://github.com/datamapper/dm-postgres-adapter.git
+  revision: 9a6748980396f1f8a3c89bda92af38e952e00270
+  branch: release-1.2
+  specs:
+    dm-postgres-adapter (1.2.0)
+      dm-do-adapter (~> 1.2.0)
+      do_postgres (~> 0.10.6)
+
+GIT
+  remote: https://github.com/datamapper/dm-rails.git
+  revision: 30e992275262245b24a71cf09dc57fa3b723eb85
+  branch: release-1.2
+  specs:
+    dm-rails (1.2.1)
+      actionpack (>= 3.0, < 5.0)
+      dm-active_model (~> 1.2.0)
+      dm-core (~> 1.2.0)
+      railties (>= 3.0, < 5.0)
+
+GIT
+  remote: https://github.com/datamapper/dm-timestamps.git
+  revision: 1d3e199632c8e97a964f843786a7039e3398f135
+  branch: release-1.2
+  specs:
+    dm-timestamps (1.2.0)
+      dm-core (~> 1.2.0)
+
+GIT
+  remote: https://github.com/datamapper/dm-transactions.git
+  revision: a400e7ffdca0a358b44698259584bb5c29f9f1b8
+  branch: release-1.2
+  specs:
+    dm-transactions (1.2.0)
+      dm-core (~> 1.2.0)
+
+GIT
+  remote: https://github.com/datamapper/dm-validations.git
+  revision: b6542e79bb2ea022241ee8cf1e861153824ffda4
+  branch: release-1.2
+  specs:
+    dm-validations (1.2.0)
+      dm-core (~> 1.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -21,12 +108,17 @@ GEM
       activemodel (= 4.1.1)
       activesupport (= 4.1.1)
       arel (~> 5.0.0)
+    activeresource (4.0.0)
+      activemodel (~> 4.0)
+      activesupport (~> 4.0)
+      rails-observers (~> 0.1.1)
     activesupport (4.1.1)
       i18n (~> 0.6, >= 0.6.9)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    addressable (2.3.6)
     arel (5.0.1.20140414130214)
     builder (3.2.2)
     chunky_png (1.3.1)
@@ -45,8 +137,16 @@ GEM
     compass-rails (1.1.7)
       compass (>= 0.12.2)
       sprockets (<= 2.11.0)
+    data_objects (0.10.14)
+      addressable (~> 2.1)
+    database_cleaner (1.3.0)
     decent_exposure (2.3.2)
     diff-lcs (1.2.5)
+    dm-rspec (0.2.4)
+      dm-core
+      dm-validations
+    do_postgres (0.10.14)
+      data_objects (= 0.10.14)
     draper (1.3.1)
       actionpack (>= 3.0)
       activemodel (>= 3.0)
@@ -106,6 +206,8 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.1)
       sprockets-rails (~> 2.0)
+    rails-observers (0.1.2)
+      activemodel (~> 4.0)
     railties (4.1.1)
       actionpack (= 4.1.1)
       activesupport (= 4.1.1)
@@ -188,9 +290,26 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionmailer
+  actionpack
+  activemodel
+  activeresource
+  activesupport
   coffee-rails (~> 4.0.0)
   compass-rails
+  database_cleaner
   decent_exposure (~> 2.3.2)
+  dm-active_model!
+  dm-constraints!
+  dm-core!
+  dm-do-adapter!
+  dm-migrations!
+  dm-postgres-adapter!
+  dm-rails!
+  dm-rspec
+  dm-timestamps!
+  dm-transactions!
+  dm-validations!
   draper
   factory_girl_rails
   faker
@@ -199,7 +318,6 @@ DEPENDENCIES
   jquery-rails
   pg
   pry
-  rails (= 4.1.1)
   rspec-given (~> 3.5.4)
   rspec-rails
   sass-rails (~> 4.0.3)
@@ -208,4 +326,5 @@ DEPENDENCIES
   spring
   turbolinks
   twitter-bootstrap-rails (~> 2.2.8)
+  tzinfo
   uglifier (>= 1.3.0)
