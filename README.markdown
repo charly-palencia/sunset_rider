@@ -54,7 +54,7 @@ Run all the suite test
 Design 
 ---
 
-![](public/design.png)
+![](public/design_datamapper.png)
 
 ###Hexagonal Architecture Intent###
 
