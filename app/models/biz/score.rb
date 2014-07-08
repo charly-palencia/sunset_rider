@@ -3,10 +3,9 @@ require "./app/models/biz/score_calculator"
 
 module Biz
   class Score < Model
+    extend Forwardable
 
-    def total
-      calculator.total
-    end
+    def_delegator :calculator, :total
 
     def calculator
       @score_calculator ||= Biz::ScoreCalculator.new(self)
